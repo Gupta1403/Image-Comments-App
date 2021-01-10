@@ -32,12 +32,15 @@ function App() {
   }
   return (
     <>
+      <nav class="navbar navbar-light bg-light justify-content-between">
+        <a class="navbar-brand">Image Tagging Demo</a>
+      </nav>
       <div className='dropdown-container d-flex flex-column justify-content-center align-items-center'>
-        <select className='form-control' defaultValue="NaN" onChange={ ({ target }) => {
-          (async () =>{
+        <select className='form-control' defaultValue="NaN" onChange={({ target }) => {
+          (async () => {
             await setSelectedImageInd('')
             setSelectedImageInd(target.value)
-        })()
+          })()
         }}>
           <option disabled defaultChecked={true} value='NaN'>Select an image</option>
           {imagesList.map(({ imageName }, index) => (
