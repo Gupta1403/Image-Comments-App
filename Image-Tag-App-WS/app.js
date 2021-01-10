@@ -4,10 +4,9 @@ const fs = require('fs');
 const cors = require('cors');
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
-const imageCommentsData = require("./Image-Tag-App-WS/src/data.json");
-const e = require('express');
-// const port = 3500 || process.env.PORT;
-const port = 3500;
+const imageCommentsData = require("./data.json");
+const port  = process.env.PORT || 8080; //Step-1
+const path = require('path');
 
 // configuring Mongoose
 mongoose.Promise = global.Promise;//
@@ -86,5 +85,12 @@ app.put("/pointComment", async(req ,res )=>{
         res.send('Adding comment failed!.Please try again')
     }
 })
+
+if(process.env.NODE_ENV === 'production') {
+    app.use(express.static( 'Image-Tag-App-UI/build' ));
+    app.get( '*', (req, res) => {
+        res.sendFile( path.join(__dirname, 'Image-Tag-App-UI', 'build') )
+    } )
+}
 
 app.listen(port, () => console.log(`Server started at port ${port}`));

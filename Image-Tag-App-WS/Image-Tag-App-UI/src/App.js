@@ -1,7 +1,6 @@
 import ImageContainer from "./components/ImageContainer";
 import Axios from "axios";
 import { useState, useEffect } from "react";
-import axios from "axios";
 
 function App() {
 
@@ -12,7 +11,7 @@ function App() {
   useEffect(() => {
     (async () => {
       try {
-        let { data } = await Axios.get("http://localhost:3500/imagesComments");
+        let { data } = await Axios.get("/imagesComments");
         setImagesList(data);
       } catch (error) {
         !error.response ? setReqErrMsg("Network Error") : setReqErrMsg(error.response?.data.message);
@@ -26,7 +25,7 @@ function App() {
     setImagesList(imagesListDum);
     let bodyObj = { _id: imagesListDum[selectedImageInd]._id, newCommentTobeAdded };
     try {
-      await axios.put("http://localhost:3500/pointComment", bodyObj);
+      await Axios.put("/pointComment", bodyObj);
     } catch (error) {
       !error.response ? setReqErrMsg("Network Error") : setReqErrMsg(error.response?.data.message);
     }

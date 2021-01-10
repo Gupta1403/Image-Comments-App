@@ -64,7 +64,7 @@ class ImageContainer extends Component {
         return (
             display &&
             <div className='absolute-container'>
-                <img id='img' ref={imageRef} src={'http://localhost:3500/' + this.props.imageURL}
+                <img id='img' ref={imageRef} src={'/' + this.props.imageURL}
                     onClick={this.createNewPoint} alt="alternate text" />
                 {newPointCommentsArr.map((eachPoint, index) => <CommentContainer pointData={eachPoint} imageRef={imageRef} key={index} />)}
                 {<input className='input' id='input' ref={inputRef} autoFocus={true} style={newPoint.left ? {} : { display: 'none' }} />}
