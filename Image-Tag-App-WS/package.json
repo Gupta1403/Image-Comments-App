@@ -1,0 +1,19 @@
+{
+  "name": "Image-Tag-App-WS",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.11.11"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node app.js",
+    "heroku-postbuild": "cd Image-Tag-App-UI && npm install && npm run build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

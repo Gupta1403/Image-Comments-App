@@ -1,0 +1,32 @@
+[
+    {
+        "imageName": "Bird",
+        "imageURL": "Bird.jpg",
+        "altText" : "Beautiful bird",
+        "pointCommentsArr": [
+            {
+                "left": 0.1,
+                "top": 0.1,
+                "comment": "Image of bird"
+            }
+        ]
+    },
+    {
+        "imageName": "Butterfly",
+        "imageURL": "Butterfly.jpg",
+        "altText" : "Beautiful Butterfly",
+        "pointCommentsArr": []
+    },
+    {
+        "imageName": "Mountains",
+        "imageURL": "Mountains.jpg",
+        "altText" : "Beautiful Mountains",
+        "pointCommentsArr": []
+    },
+    {
+        "imageName": "Ocean",
+        "imageURL": "Ocean.jpg",
+        "altText" : "Beautiful Ocean",
+        "pointCommentsArr": []
+    }
+]
