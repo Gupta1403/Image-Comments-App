@@ -41,7 +41,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended : true}));
 
 //Image Comments initial data setup
-app.post("/setupDb", async (req, res) => {
+app.get("/setupDb", async (req, res) => {
     try {
         let dbCollection = await getImageCommentsCollection();
         try {
